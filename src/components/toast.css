@@ -1,0 +1,29 @@
+.toast-wrapper{
+    height: 10vh;
+    width: 20vw;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.success{
+    background-color: lightgreen;
+}
+
+.info{
+    background-color: lightskyblue;
+}
+
+.warning{
+    background-color:rgb(231, 183, 52);
+}
+
+.error{
+    background-color: indianred;
+}
+
+.toast-close{
+    cursor: pointer;
+}

@@ -1,0 +1,61 @@
+.container{
+   height: 50%;
+   width: 50%;
+   text-align: center;
+   border: 1px solid gray;
+   border-radius: 10px;
+   padding: 1rem;
+}
+
+.button-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    column-gap: 5vw;
+    row-gap: 2vw;
+}
+
+.button-wrapper button{
+    height: 8vh;
+    width: 10vw;
+   
+}
+
+.top-left{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.top-right{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.bottom-left{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.bottom-right{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+
+html, body, #root{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
