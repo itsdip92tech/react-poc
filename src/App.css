@@ -54,8 +54,24 @@
 html, body, #root{
     height: 100%;
     width: 100%;
-    overflow: hidden;
-    display:flex;
-    justify-content:center;
+    overflow-x: hidden;
+}
+
+.parentWrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.searchBox{
+    width: 100%;
+    height: 15%;
+}
+
+.tableData{
+    width: 100%;
+    height: 75%;
 }

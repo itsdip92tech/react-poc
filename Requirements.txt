@@ -1,0 +1,5 @@
+Create a react app that will render a table with infinite scroll. The data will be fetched from a promise.
+The table should have filtering and sorting features.
+The user can also search from the table with any text.
+The filter can be considered in a seperate modal and also can be built dynamically by listing the distinct values from a column. 
+This is an additional requirement.

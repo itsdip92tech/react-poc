@@ -1,32 +1,28 @@
-
+import { useState,useCallback,Suspense } from 'react'
 import './App.css'
-import useToast from './hooks/useToast';
-
+import SearchBoxComponent from './components/searchBox'
+import TableComponent from './components/table/table'
+import Loading from './components/Loading';
 function App() {
 
-  const { triggerNotification, NotificationComponent } = useToast("bottom-right");
+  const [query,setQuery] = useState<string>("");
+
+  const handleChange=useCallback((value:string)=>{
+    console.log('state lifted')
+    setQuery(value);
+  },[])
 
   return (
-    <>
-      {NotificationComponent}
-      <div className='container'>
-        <h1>This is a Toast POC</h1>
-        <div className='button-wrapper'>
-        <button onClick={()=>triggerNotification({duration:3000,type:"info",message:"This is a new notification"})}>
-          Info
-        </button>
-        <button onClick={()=>triggerNotification({duration:3000,type:"success",message:"This is a new notification"})}>
-          Success
-        </button>
-        <button onClick={()=>triggerNotification({duration:3000,type:"warning",message:"This is a new notification"})}>
-          Warning
-        </button>
-        <button onClick={()=>triggerNotification({duration:3000,type:"error",message:"This is a new notification"})}>
-          Error
-        </button>
+    <div className='parentWrapper'>
+      <div className='searchBox'>
+        <SearchBoxComponent onValueChange={handleChange}/>
       </div>
+      <div className='tableData'>
+        <Suspense fallback={<Loading />}>
+          <TableComponent query={query}/>
+        </Suspense>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,8 @@
+.customerTable{
+    width: 100%;
+    table-layout: fixed;
+    overflow-x: auto;
+    text-align: center;
+}
+
+
