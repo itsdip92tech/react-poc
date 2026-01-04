@@ -1,0 +1,12 @@
+.tableWrapper{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.customerTable{
+    width: 100%;
+    table-layout: fixed;
+    overflow-x: auto;
+    text-align: center;
+}

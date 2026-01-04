@@ -2,11 +2,13 @@ import {type ReactElement, useState } from 'react';
 import './App.css'
 import Notification from './components/notification'
 import SearchTable from './components/searchTable'
+import InfiniteScroll from './components/infiniteScroll/infiniteScroll';
 
 const pocList = [
   {id:0,name:"Reset",component: null},
   {id:1,name:"Search Table POC", component: <SearchTable  />},
-  {id:2,name:"Notification POC", component: <Notification />}
+  {id:2,name:"Notification POC", component: <Notification />},
+  {id:3,name:"Infinte Scroll", component: <InfiniteScroll />}
 ]
 
 
@@ -21,12 +23,12 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='pocToggler'>
         {pocList.map(poc=>
           <button key={poc.id} onClick={()=>handlePOC(poc.id)}>{poc.name}</button>
         )}
       </div>
-      <div>
+      <div className='pocWrapper'>
         {activePoc}
       </div> 
     </>

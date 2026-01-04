@@ -1,5 +1,5 @@
 import { useState,useCallback,Suspense } from 'react'
-import SearchBoxComponent from './searchBox'
+import SearchBoxComponent from './table/searchBox'
 import TableComponent from './table/table'
 import Loading from './Loading';
 

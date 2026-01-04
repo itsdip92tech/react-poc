@@ -16,6 +16,7 @@ interface Notification extends useToastProps{
 }
 
 const useToast = (Position:Position="top-right")=>{
+    // Reference for distinct id of the toast.
     const idRef  = useRef(0);
     const nextId = ()=>{
         idRef.current +=1;
@@ -23,7 +24,7 @@ const useToast = (Position:Position="top-right")=>{
     }
 
     // const isTop:boolean = Position.startsWith("top")
-
+    // This variable will contain the list of toasts to be displayed
     const [notification,setNotification] = useState<Notification[]>([]);
 
     const triggerNotification  = (notificationProps:useToastProps)=>{
@@ -35,11 +36,13 @@ const useToast = (Position:Position="top-right")=>{
 
         setNotification((notification)=>[...notification,Toast]);
 
+        // Schedule removal of a toast from the array.
         setTimeout(()=>{
             closeNotification(id)
         },notificationProps.duration)
     }
 
+    // Remove a toast from the array.
     const closeNotification = (id:number)=>{
         setNotification((notification)=>notification.filter((t)=>t.id !== id))
     }

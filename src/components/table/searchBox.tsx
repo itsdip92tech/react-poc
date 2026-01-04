@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import useSearch from "../hooks/useSearch";
+import useSearch from "../../hooks/useSearch";
 
 interface ChildProps {
     onValueChange: (value: string) => void;
