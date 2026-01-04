@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .container{
    height: 50%;
    width: 50%;
@@ -85,4 +89,34 @@ html, body, #root{
 .pocWrapper{
     height: 90%;
     width: 100%;
+    display: flex;
+    place-items: center;
+}
+
+.boardWrapper{
+    display: flex;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.columnWrapper{
+    width: calc(100% / 4);
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 10px 10px 8px darkgray, 6px 6px 4px lightgray inset ;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+@media only screen and (max-width:600px){
+    .boardWrapper{
+        flex-direction: column;
+    }
+
+    .columnWrapper{
+        width: 90%;
+    }
 }

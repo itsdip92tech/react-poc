@@ -3,12 +3,14 @@ import './App.css'
 import Notification from './components/notification'
 import SearchTable from './components/searchTable'
 import InfiniteScroll from './components/infiniteScroll/infiniteScroll';
+import Board from './components/board';
 
 const pocList = [
   {id:0,name:"Reset",component: null},
   {id:1,name:"Search Table POC", component: <SearchTable  />},
   {id:2,name:"Notification POC", component: <Notification />},
-  {id:3,name:"Infinte Scroll", component: <InfiniteScroll />}
+  {id:3,name:"Infinte Scroll", component: <InfiniteScroll />},
+  {id:4,name:"Kanban Board", component: <Board />}
 ]
 
 
