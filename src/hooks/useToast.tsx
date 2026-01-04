@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import ToastComponent from "../components/toast";
+import ToastComponent from "../components/toast/toast";
 
 export type Type = "info"|"success"|"error"|"warning";
 

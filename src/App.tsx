@@ -1,28 +1,35 @@
-import { useState,useCallback,Suspense } from 'react'
+import {type ReactElement, useState } from 'react';
 import './App.css'
-import SearchBoxComponent from './components/searchBox'
-import TableComponent from './components/table/table'
-import Loading from './components/Loading';
+import Notification from './components/notification'
+import SearchTable from './components/searchTable'
+
+const pocList = [
+  {id:0,name:"Reset",component: null},
+  {id:1,name:"Search Table POC", component: <SearchTable  />},
+  {id:2,name:"Notification POC", component: <Notification />}
+]
+
+
 function App() {
+  
+  const [activePoc,setActivePoc] = useState<ReactElement | null>(null)
 
-  const [query,setQuery] = useState<string>("");
-
-  const handleChange=useCallback((value:string)=>{
-    console.log('state lifted')
-    setQuery(value);
-  },[])
+  const handlePOC = (id:number)=>{
+    const selectedComponent = pocList.filter(poc=>poc.id === id);
+    setActivePoc(selectedComponent[0].component);
+  }
 
   return (
-    <div className='parentWrapper'>
-      <div className='searchBox'>
-        <SearchBoxComponent onValueChange={handleChange}/>
+    <>
+      <div>
+        {pocList.map(poc=>
+          <button key={poc.id} onClick={()=>handlePOC(poc.id)}>{poc.name}</button>
+        )}
       </div>
-      <div className='tableData'>
-        <Suspense fallback={<Loading />}>
-          <TableComponent query={query}/>
-        </Suspense>
-      </div>
-    </div>
+      <div>
+        {activePoc}
+      </div> 
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { AiOutlineWarning } from "react-icons/ai";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
-import type { Type } from '../hooks/useToast';
+import type { Type } from '../../hooks/useToast';
 import './toast.css'
 
 interface ToastProps{
